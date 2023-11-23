@@ -5,7 +5,7 @@ export type OSMElementType = 'node'|'way'|'relation';
 export type OSMElementBase = {
   type: OSMElementType,
   id: number,
-  tags: { name?: string } & Record<string, string>
+  tags?: { name?: string } & Record<string, string>
 };
 
 export type OSMNode = OSMElementBase & {
