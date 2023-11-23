@@ -1,0 +1,39 @@
+{
+  "name": "ol-osmoverpass",
+  "version": "0.0.1",
+  "description": "OverLayers vector layer source for OpenStreetMap elements using Overpass API",
+  "main": "dist/index.js",
+  "keywords": [
+    "osm",
+    "openstreetmap",
+    "openlayers",
+    "gis",
+    "map",
+    "road-snapping"
+  ],
+  "scripts": {
+    "build": "npx tsc && npx webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ponlawat-w/ol-osmoverpass.git"
+  },
+  "author": {
+    "name": "Ponlawat Weerapanpisit",
+    "email": "ponlawat_w@outlook.co.th"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ponlawat-w/ol-osmoverpass/issues"
+  },
+  "homepage": "https://github.com/ponlawat-w/ol-osmoverpass#readme",
+  "devDependencies": {
+    "ol": "^8.2.0",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  }
+}
