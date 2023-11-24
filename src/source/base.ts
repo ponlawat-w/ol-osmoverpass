@@ -112,7 +112,7 @@ export default abstract class OSMOverpassSourceBase<GeometryType extends OSMGeom
         this.clear(true);
         this.loadedExtents.clear();
       }
-      const features = await this.fetchOSMOverpass(extent, projection);
+      const features = await this.fetchOSMOverpass(fetchExtent, projection);
       this.addFeatures(features.filter(x => !this.getFeatureById(x.getId()!)));
       this.loadedExtents.insert(fetchExtent, { extent: fetchExtent });
       return success && success(features);
