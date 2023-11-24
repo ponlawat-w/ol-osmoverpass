@@ -1,7 +1,9 @@
 name: Pull Request Check
 on:
   pull_request:
-    branches: dev
+    branches:
+      - dev/*
+      - master
 jobs:
   unit-tests:
     name: Unit Tests
