@@ -4,6 +4,12 @@ OpenLayers extension for vector source that dynamically pulls data from OpenStre
 
 ---
 
+# Installation
+
+```bash
+npm i ol-osmoverpass
+```
+
 # Examples
 
 ## OSM Nodes
@@ -42,6 +48,9 @@ const layer = new VectorLayer({
 
 map.addLayer(layer);
 ```
+
+## Using as CDN
+[HTML Example](./examples/index.html)
 
 ## Options
 

@@ -8,6 +8,7 @@ jobs:
     uses: ./.github/workflows/unit-tests.yml
   publish:
     name: Publish
+    needs: unit-tests
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
@@ -25,4 +26,4 @@ jobs:
     - name: Publish
       run: npm publish
       env:
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
