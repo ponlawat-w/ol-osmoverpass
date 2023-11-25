@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         ref: ${{ github.ref }}
     - name: Setup Node
@@ -20,6 +20,12 @@ jobs:
       with:
         node-version: 20
         registry-url: https://registry.npmjs.org/
+    - name: Get package.json
+      id: get-package
+      run: echo PACKAGE=$(cat ./package.json) >> $GITHUB_OUTPUT
+    - name: Get package version
+      id: get-package-version
+      run: echo VERSION="${{ fromJson(steps.get-package.outputs.PACKAGE).version }}" >> $GITHUB_OUTPUT
     - name: Install
       run: npm ci
     - name: Build
@@ -28,3 +34,9 @@ jobs:
       run: npm publish
       env:
         NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+    - name: Tag
+      run: |
+        git config --global user.name "ponlawat-w"
+        git config --global user.email "ponlawat_w@outlook.co.th"
+        git tag -fa "v${{ steps.get-package-version.outputs.VERSION }}" -m "v${{ steps.get-package-version.outputs.VERSION }}"
+        git push --force origin v${{ steps.get-package-version.outputs.VERSION }}
