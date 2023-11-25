@@ -1,8 +1,20 @@
-const path = require('path');
+import path from 'path';
+import { fileURLToPath } from 'url';
 
-module.exports = {
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export default {
   mode: 'production',
   entry: './dist/index.js',
+  module: {
+    rules: [{
+      test: /\.(js)$/,
+      exclude: /node_modules/,
+      resolve: {
+        fullySpecified: false
+      }
+    }]
+  },
   resolve: {
     alias: { ol: false }
   },
@@ -17,7 +29,7 @@ module.exports = {
     'ol/style': 'ol.style'
   },
   output: {
-    path: path.resolve(__dirname, 'dist', 'webpack'),
+    path: path.resolve(__dirname, 'dist', 'bundle'),
     filename: 'index.js',
     library: {
       type: 'var',

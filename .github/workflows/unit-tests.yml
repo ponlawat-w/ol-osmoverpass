@@ -2,7 +2,11 @@ name: Unit Tests
 on: workflow_call
 jobs:
   unit-tests:
-    name: Unit Tests
+    strategy:
+      fail-fast: true
+      matrix:
+        node: [16, 18, 20]
+    name: Unit Tests Node ${{ matrix.node }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -12,8 +16,14 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: ${{ matrix.node }}
       - name: Install
         run: npm ci
       - name: Test
         run: npm run test
+  unit-tests-finished:
+    name: Unit Tests Finished
+    needs: unit-tests
+    runs-on: ubuntu-latest
+    steps:
+      - run: exit 0

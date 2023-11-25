@@ -1,6 +1,7 @@
 {
   "name": "ol-osmoverpass",
-  "version": "0.1.0",
+  "type": "module",
+  "version": "0.2.0",
   "description": "OverLayers vector layer source for OpenStreetMap elements using Overpass API",
   "main": "dist/index.js",
   "keywords": [
@@ -8,12 +9,11 @@
     "openstreetmap",
     "openlayers",
     "gis",
-    "map",
-    "road-snapping"
+    "map"
   ],
   "scripts": {
     "build": "npx tsc && npx webpack",
-    "test": "npx vitest run --config ./vitest.config.ts"
+    "test": "npm run build && npx vitest run --config ./vitest.config.ts"
   },
   "repository": {
     "type": "git",

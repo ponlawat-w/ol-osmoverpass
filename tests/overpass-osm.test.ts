@@ -1,10 +1,11 @@
 import { beforeAll, describe, expect, it } from 'vitest';
-import { type OSMElementConverter, OSMOverpass, Overpass, OSMNode, OSMWay } from '../src';
-import { boundingExtent, containsCoordinate } from 'ol/extent';
-import { Projection } from 'ol/proj';
-import type { Coordinate } from 'ol/coordinate';
-import { LineString } from 'ol/geom';
 import { Feature } from 'ol';
+import { boundingExtent, containsCoordinate } from 'ol/extent';
+import { LineString } from 'ol/geom';
+import { Projection } from 'ol/proj';
+import { OSMOverpass, Overpass, OSMNode, OSMWay } from '../dist';
+import type { OSMElementConverter } from '../dist';
+import type { Coordinate } from 'ol/coordinate';
 
 describe('Test OSMOverpass', () => {
   const coor1: Coordinate = [98.98017, 18.78764];
