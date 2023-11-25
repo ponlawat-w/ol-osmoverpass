@@ -1,6 +1,6 @@
 import { describe, beforeAll, it, expect } from 'vitest';
 import { boundingExtent, containsXY } from 'ol/extent';
-import { Overpass, type OSMNode } from '../src';
+import { Overpass, type OSMNode } from '../dist';
 import type { Coordinate } from 'ol/coordinate';
 
 

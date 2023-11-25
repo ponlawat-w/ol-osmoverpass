@@ -1,11 +1,11 @@
 import { beforeAll, beforeEach, describe, expect, it, vi, test } from 'vitest';
 import { Map, View } from 'ol';
-import { Vector as VectorLayer } from 'ol/layer';
-import { OSMOverpassNodeSource, Overpass } from '../src';
-import { Window } from 'happy-dom';
 import { boundingExtent, buffer, containsCoordinate } from 'ol/extent';
+import { Vector as VectorLayer } from 'ol/layer';
 import { Projection, transform, transformExtent } from 'ol/proj';
+import { Window } from 'happy-dom';
 import { OVERPASS_API_ENDPOINT, OVERPASS_FETCH_TIMEOUT } from './common';
+import { OSMOverpassNodeSource, Overpass } from '../dist';
 
 describe('Test OSMOverpassNodeSource', () => {
   const epsg4326 = new Projection({ code: 'EPSG:4326' });
