@@ -1,5 +1,5 @@
 import type { Extent } from 'ol/extent';
-import type { OverpassResponse } from './response';
+import type { OverpassResponse } from './response.d.ts';
 
 /**
  * Exception for not specifying OverpassAPI endpoint

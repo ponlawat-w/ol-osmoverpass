@@ -1,7 +1,7 @@
 import { Feature } from 'ol';
 import { Point, LineString } from 'ol/geom';
 import { transform, transformExtent, Projection } from 'ol/proj';
-import OverpassAPI from './api';
+import OverpassAPI from './api.js';
 import type { Coordinate } from 'ol/coordinate';
 import type { Extent } from 'ol/extent';
 import type { Geometry } from 'ol/geom';

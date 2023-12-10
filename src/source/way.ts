@@ -1,9 +1,9 @@
 import { Feature } from 'ol';
-import { Extent } from 'ol/extent';
 import { LineString } from 'ol/geom';
 import { Projection } from 'ol/proj';
-import OSMOverpass from '../overpass/osm';
-import OSMOverpassSourceBase from './base';
+import OSMOverpass from '../overpass/osm.js';
+import OSMOverpassSourceBase from './base.js';
+import type { Extent } from 'ol/extent';
 
 /**
  * OSMOverpassSource for Ways

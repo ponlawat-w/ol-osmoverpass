@@ -3,7 +3,7 @@ import { LineString, Point, Polygon } from 'ol/geom';
 import { bbox } from 'ol/loadingstrategy';
 import { Vector as VectorSource } from 'ol/source';
 import { Style } from 'ol/style';
-import OSMOverpass from '../overpass/osm';
+import OSMOverpass from '../overpass/osm.js';
 import type { Feature } from 'ol';
 import type RBush from 'ol/structs/RBush';
 import type { Projection } from 'ol/proj';

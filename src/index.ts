@@ -1,9 +1,9 @@
-export { default as Overpass } from './overpass/api';
+export { default as Overpass } from './overpass/api.js';
 
 export {
   default as OSMOverpass, 
   type OSMElementConverter
-} from './overpass/osm';
+} from './overpass/osm.js';
 
 export {
   type OSMElementType,
@@ -14,14 +14,14 @@ export {
   type OSMRelation,
   type OSMElement,
   type OverpassResponse
-} from './overpass/response';
+} from './overpass/response.js';
 
 export {
   default as OSMOverpassSourceBase,
   type LoaderSuccessFn,
   type LoaderFailedFn,
   type OSMOverpassSourceOptions
-} from './source/base';
+} from './source/base.js';
 
-export { default as OSMOverpassNodeSource } from './source/node';
-export { default as OSMOverpassWaySource } from './source/way';
+export { default as OSMOverpassNodeSource } from './source/node.js';
+export { default as OSMOverpassWaySource } from './source/way.js';
