@@ -110,7 +110,6 @@ export default abstract class OSMOverpassSourceBase<GeometryType extends OSMGeom
       this._busy = true;
       if (this.getFeatures().length > this.options.cachedFeaturesCount) {
         this.clear(true);
-        this.loadedExtents.clear();
       }
       const features = await this.fetchOSMOverpass(fetchExtent, projection);
       this.addFeatures(features.filter(x => !this.getFeatureById(x.getId()!)));
@@ -122,6 +121,11 @@ export default abstract class OSMOverpassSourceBase<GeometryType extends OSMGeom
     } finally {
       this._busy = false;
     }
+  }
+
+  public clear(fast?: boolean | undefined): void {
+    this.loadedExtents.clear();
+    super.clear(fast);
   }
 
   /**
