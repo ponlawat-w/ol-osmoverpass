@@ -1,7 +1,7 @@
 {
   "name": "ol-osmoverpass",
   "type": "module",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "OverLayers vector layer source for OpenStreetMap elements using Overpass API",
   "main": "dist/index.js",
   "keywords": [
@@ -32,11 +32,11 @@
   },
   "homepage": "https://github.com/ponlawat-w/ol-osmoverpass#readme",
   "devDependencies": {
-    "happy-dom": "^12.10.3",
-    "ol": "^8.2.0",
-    "typescript": "^5.3.2",
-    "vitest": "^0.34.6",
-    "webpack": "^5.89.0",
+    "happy-dom": "^15.7.4",
+    "ol": "^10.2.1",
+    "typescript": "^5.6.2",
+    "vitest": "^2.1.1",
+    "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4"
   }
 }
