@@ -87,7 +87,7 @@ export default abstract class OSMOverpassSourceBase<GeometryType extends OSMGeom
       console.warn('EMPTY OVERPASS QUERY');
       return [];
     }
-    return OSMOverpass.fetch(extent, projection, this.options.overpassQuery, () => []);
+    return OSMOverpass.fetch(extent, projection, this.options.overpassQuery, () => []) as Promise<Feature<GeometryType>[]>;
   }
 
   /**
